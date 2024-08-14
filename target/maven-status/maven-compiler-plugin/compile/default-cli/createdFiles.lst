@@ -1,7 +1,0 @@
-model/Car.class
-web/controller/CarController.class
-web/controller/HelloController.class
-web/config/WebConfig.class
-service/CarService.class
-web/config/AppInit.class
-service/CarServiceImpl.class

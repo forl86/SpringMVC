@@ -1,10 +1,13 @@
 package service;
 
 import model.Car;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class CarServiceImpl implements CarService{
     private List<Car> carsList;
 
