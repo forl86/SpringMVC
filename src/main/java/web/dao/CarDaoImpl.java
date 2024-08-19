@@ -1,17 +1,15 @@
-package service;
+package web.dao;
 
-import model.Car;
-import org.springframework.context.annotation.Bean;
+import web.model.Car;
 import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class CarServiceImpl implements CarService{
+public class CarDaoImpl implements CarDao {
     private List<Car> carsList;
 
-    public CarServiceImpl() {
+    public CarDaoImpl() {
         carsList = new ArrayList<>();
         carsList.add(new Car("Toyota", "Caldina", 2000));
         carsList.add(new Car("Ford", "Mustang", 1975));
@@ -19,7 +17,10 @@ public class CarServiceImpl implements CarService{
         carsList.add(new Car("Kia", "Rio", 2018));
         carsList.add(new Car("Haval", "T500", 2024));
     }
-
+    @Override
+    public void add(Car car) {
+        carsList.add(car);
+    }
     @Override
     public List<Car> getAllCars() {
         return carsList;
@@ -29,6 +30,7 @@ public class CarServiceImpl implements CarService{
     public List<Car> getCars(int count) {
         return (count < 5) ? carsList.subList(0, count) : carsList;
     }
+
     @Override
     public List<String> getCarNames() {
         List<String> carNames = new ArrayList<>();
